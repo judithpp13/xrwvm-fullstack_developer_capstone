@@ -74,7 +74,7 @@ def registration(request):
         logger.debug("{} is new user".format(username))
 
     # If it is a new user
-    if not username_exist:
+    if not username_exist: 
         # Create user in auth_user table
         user = User.objects.create_user(username=username, first_name=first_name, 
                                         last_name=last_name, password=password, email=email)
@@ -83,7 +83,7 @@ def registration(request):
         data = {"userName": username, "status": "Authenticated"}
         return JsonResponse(data)
     else :
-        data = {"userName":username,"error":"Already Registered"}
+        data = {"userName": username,"error": "Already Registered"}
         return JsonResponse(data)
 # Update the `get_dealerships` view to render the index page with
 # a list of dealerships
@@ -128,7 +128,7 @@ def get_dealer_details(request, dealer_id):
         dealership = get_request(endpoint)
         return JsonResponse({"status": 200, "dealer": dealership})
     else:
-        return JsonResponse({"status":400, "message": "Bad Request"})
+        return JsonResponse({"status": 400, "message": "Bad Request"})
 
 # Create a `add_review` view to submit a review
 # def add_review(request):
@@ -141,9 +141,9 @@ def add_review(request):
             response = post_review(data)
             return JsonResponse({"status": 200})
         except:
-            return JsonResponse({"status": 401,"message":"Error in posting review"})
+            return JsonResponse({"status": 401, "message":"Error in posting review"})
     else:
-        return JsonResponse({"status": 403,"message":"Unauthorized"})
+        return JsonResponse({"status": 403, "message":"Unauthorized"})
 
 def get_cars(request):
     count = CarMake.objects.filter().count()
