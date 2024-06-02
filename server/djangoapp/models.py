@@ -43,6 +43,7 @@ class CarModel(models.Model):
     default=2023, validators=[MaxValueValidator(2023), MinValueValidator(2015)]
 )
 
+
     def __str__(self):
         return self.name
         # Return the name as the string representation
