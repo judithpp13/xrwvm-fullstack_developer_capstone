@@ -29,7 +29,7 @@ SECRET_KEY =\
 DEBUG = True
 
 ALLOWED_HOSTS = ['localhost',
-'https://judithyang13-8000.\
+'https://judithyang13-8000.
 theianext-1-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai/']
 CSRF_TRUSTED_ORIGINS = [
     "https://judithyang13-8000.theianext-1-labs-\
@@ -67,7 +67,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR,'frontend/static'),
+            os.path.join(BASE_DIR,'frontend/static'), 
             os.path.join(BASE_DIR, 'frontend/build'),
             os.path.join(BASE_DIR, 'frontend/build/static'),
             ],
@@ -103,7 +103,7 @@ AUTH_PASSWORD_VALIDATORS = [
         password_validation.UserAttributeSimilarityValidator', },
     {
         'NAME':
-        'django.contrib.auth.password_validation.MinimumLengthValidator',},
+        'django.contrib.auth.password_validation.MinimumLengthValidator', },
     {
         'NAME':
         'django.contrib.auth.password_validation.CommonPasswordValidator',
